@@ -19,7 +19,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Button {
-                withAnimation(.interpolatingSpring(stiffness: 150, damping: 15)) {
+                withAnimation(.interpolatingSpring(stiffness: 180, damping: 15)) {
                     isAnimate.toggle()
                 }
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
