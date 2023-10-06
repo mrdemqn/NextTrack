@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var isAnimate: Bool = false
+    @State private var isAnimate2: Bool = false
     
     @Namespace private var namespace
     
@@ -45,8 +46,16 @@ struct ContentView: View {
                         .matchedGeometryEffect(id: playImageName, in: namespace)
                 }.offset(x: -10)
             }
+            .frame(width: 100, height: 100)
             .buttonStyle(.plain)
             .foregroundStyle(.blue)
+            .background(alignment: .center) {
+                Color.gray
+                    .opacity(isAnimate ? 0.1 : 0)
+                    .clipShape(.circle)
+                    .offset(x: 5)
+                    .animation(.bouncy(duration: 0.5), value: isAnimate)
+            }
         }
     }
 }
